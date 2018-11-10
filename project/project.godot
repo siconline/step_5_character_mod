@@ -18,6 +18,14 @@ _global_script_class_icons={
 config/name="step_5_character_mod"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=1200
+window/size/test_height=675
+window/stretch/mode="viewport"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
