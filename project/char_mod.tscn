@@ -1,15 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://images/background.jpg" type="Texture" id=1]
-[ext_resource path="res://buttons_row_1.gd" type="Script" id=2]
-[ext_resource path="res://images/char_part_0/part_0_01.svg" type="Texture" id=3]
-[ext_resource path="res://images/buttons/button-style_l.svg" type="Texture" id=4]
-[ext_resource path="res://images/buttons/button-color_l.svg" type="Texture" id=5]
-[ext_resource path="res://images/buttons/button-style_r.svg" type="Texture" id=6]
-[ext_resource path="res://images/char_part_0/part_0_04.svg" type="Texture" id=7]
-[ext_resource path="res://images/buttons/button-color_r.svg" type="Texture" id=8]
+[ext_resource path="res://char_mod.gd" type="Script" id=1]
+[ext_resource path="res://images/background.jpg" type="Texture" id=2]
+[ext_resource path="res://buttons_rows.gd" type="Script" id=3]
+[ext_resource path="res://images/char_part_0/part_0_01.svg" type="Texture" id=4]
+[ext_resource path="res://images/buttons/button-style_l.svg" type="Texture" id=5]
+[ext_resource path="res://images/buttons/button-color_l.svg" type="Texture" id=6]
+[ext_resource path="res://images/buttons/button-style_r.svg" type="Texture" id=7]
+[ext_resource path="res://images/char_part_0/part_0_04.svg" type="Texture" id=8]
+[ext_resource path="res://images/buttons/button-color_r.svg" type="Texture" id=9]
 
 [node name="char_mod" type="Node2D"]
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -37,10 +39,11 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 
 [node name="background" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="buttons_row_1" type="Control" parent="."]
+[node name="buttons_row_0" type="Control" parent="."]
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -53,13 +56,14 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
-[node name="texture_middle" type="Sprite" parent="buttons_row_1"]
+[node name="texture_middle" type="Sprite" parent="buttons_row_0"]
 position = Vector2( 2.86395, 71.5986 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="button_left" type="TextureButton" parent="buttons_row_1"]
+[node name="button_left" type="TextureButton" parent="buttons_row_0"]
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -78,14 +82,14 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="texture" type="Sprite" parent="buttons_row_1/button_left"]
+[node name="texture" type="Sprite" parent="buttons_row_0/button_left"]
 position = Vector2( 148.602, 71.8624 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="button_left_color" type="TextureButton" parent="buttons_row_1/button_left"]
+[node name="button_left_color" type="TextureButton" parent="buttons_row_0/button_left"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -105,10 +109,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="button_right" type="TextureButton" parent="buttons_row_1"]
+[node name="button_right" type="TextureButton" parent="buttons_row_0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -128,15 +132,15 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="texture" type="Sprite" parent="buttons_row_1/button_right"]
+[node name="texture" type="Sprite" parent="buttons_row_0/button_right"]
 position = Vector2( 71.5986, 68.7347 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="button_right_color" type="TextureButton" parent="buttons_row_1/button_right"]
+[node name="button_right_color" type="TextureButton" parent="buttons_row_0/button_right"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -156,10 +160,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
 _sections_unfolded = [ "Textures", "Visibility" ]
 
-[connection signal="pressed" from="buttons_row_1/button_left" to="buttons_row_1" method="_on_button_left_pressed"]
-[connection signal="pressed" from="buttons_row_1/button_left/button_left_color" to="buttons_row_1" method="_on_button_left_color_pressed"]
-[connection signal="pressed" from="buttons_row_1/button_right" to="buttons_row_1" method="_on_button_right_pressed"]
-[connection signal="pressed" from="buttons_row_1/button_right/button_right_color" to="buttons_row_1" method="_on_button_right_color_pressed"]
+[connection signal="pressed" from="buttons_row_0/button_left" to="buttons_row_0" method="_on_button_left_pressed"]
+[connection signal="pressed" from="buttons_row_0/button_left/button_left_color" to="buttons_row_0" method="_on_button_left_color_pressed"]
+[connection signal="pressed" from="buttons_row_0/button_right" to="buttons_row_0" method="_on_button_right_pressed"]
+[connection signal="pressed" from="buttons_row_0/button_right/button_right_color" to="buttons_row_0" method="_on_button_right_color_pressed"]

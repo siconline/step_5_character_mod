@@ -1,39 +1,25 @@
 extends Control
 
 
-var arr_color = \
-	[
-	Color( 1, 1, 1, 0.5 ), # placeholder start no color
-	Color( "FF8A00" ), 
-	Color( "60FF00" ), 
-	Color( "FFFB00" ), 
-	Color( "D7806B" ), 
-	Color( "9A6153" ),
-	Color( 1, 1, 1, 0.5 ) # placeholder end no color
-	]
-var color_left = arr_color.size()/2 - 1
-var color_middle = arr_color.size()/2
-var color_right = arr_color.size()/2 + 1
+var arr_color
+var color_left
+var color_middle
+var color_right
 
 
-var arr_texture = \
-	[
-	preload('res://images/char_part_0/part_0_01.svg'),
-	preload('res://images/char_part_0/part_0_02.svg'),
-	preload('res://images/char_part_0/part_0_03.svg'),
-	preload('res://images/char_part_0/part_0_04.svg'),
-	]
-var texture_left = arr_texture.size()/2 - 1 
-var texture_middle = arr_texture.size()/2
-var texture_right = arr_texture.size()/2 + 1
+var arr_texture
+var texture_left
+var texture_middle
+var texture_right
 
 
 func _ready():
-	#print (arr_color.size()/2)
 	pass # Replace with function body.
 
 
 func _process(delta):
+	
+	
 	# change button color
 	$button_left/button_left_color.modulate = arr_color[color_left]
 	$button_right/button_right_color.modulate = arr_color[color_right]
