@@ -1,14 +1,21 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://char_mod.gd" type="Script" id=1]
 [ext_resource path="res://images/background.jpg" type="Texture" id=2]
-[ext_resource path="res://buttons_rows.gd" type="Script" id=3]
-[ext_resource path="res://images/char_part_0/part_0_01.svg" type="Texture" id=4]
-[ext_resource path="res://images/buttons/button-style_l.svg" type="Texture" id=5]
-[ext_resource path="res://images/buttons/button-color_l.svg" type="Texture" id=6]
-[ext_resource path="res://images/buttons/button-style_r.svg" type="Texture" id=7]
-[ext_resource path="res://images/char_part_0/part_0_04.svg" type="Texture" id=8]
-[ext_resource path="res://images/buttons/button-color_r.svg" type="Texture" id=9]
+[ext_resource path="res://images/frame_bg_2.jpg" type="Texture" id=3]
+[ext_resource path="res://buttons_rows.gd" type="Script" id=4]
+[ext_resource path="res://images/char_part_0/part_01.svg" type="Texture" id=5]
+[ext_resource path="res://images/buttons/b_part.png" type="Texture" id=6]
+[ext_resource path="res://images/buttons/b_color-l.png" type="Texture" id=7]
+[ext_resource path="res://images/buttons/b_mask_color-l.png" type="BitMap" id=8]
+[ext_resource path="res://images/char_part_0/part_04.svg" type="Texture" id=9]
+[ext_resource path="res://images/buttons/b_color-r.png" type="Texture" id=10]
+[ext_resource path="res://images/buttons/b_mask_color-r.png" type="BitMap" id=11]
+[ext_resource path="res://images/char_part_1/part_03.svg" type="Texture" id=12]
+[ext_resource path="res://images/char_part_1/part_01.svg" type="Texture" id=13]
+[ext_resource path="res://images/frame_bg_1.png" type="Texture" id=14]
+[ext_resource path="res://images/frame.png" type="Texture" id=15]
+[ext_resource path="res://images/window_parts.png" type="Texture" id=16]
 
 [node name="char_mod" type="Node2D"]
 script = ExtResource( 1 )
@@ -39,8 +46,14 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 
 [node name="background" type="Sprite" parent="."]
+z_index = -2
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="frame_bg_2" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="buttons_row_0" type="Control" parent="."]
 editor/display_folded = true
@@ -48,56 +61,34 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -20.0
+margin_top = -280.0
+margin_right = 20.0
+margin_bottom = -240.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 3 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Rect" ]
 
 [node name="texture_middle" type="Sprite" parent="buttons_row_0"]
-position = Vector2( 2.86395, 71.5986 )
-texture = ExtResource( 4 )
+position = Vector2( 22.5973, 54.671 )
+z_index = 2
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="button_left" type="TextureButton" parent="buttons_row_0"]
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -321.0
-margin_right = -104.0
-margin_bottom = 138.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Textures" ]
-
-[node name="texture" type="Sprite" parent="buttons_row_0/button_left"]
-position = Vector2( 148.602, 71.8624 )
-texture = ExtResource( 4 )
-
-[node name="button_left_color" type="TextureButton" parent="buttons_row_0/button_left"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 113.0
-margin_bottom = 136.0
+margin_left = -362.0
+margin_top = -37.0
+margin_right = -248.0
+margin_bottom = 77.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -110,17 +101,23 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 6 )
-_sections_unfolded = [ "Textures" ]
+_sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="button_right" type="TextureButton" parent="buttons_row_0"]
+[node name="texture" type="Sprite" parent="buttons_row_0/button_left"]
+position = Vector2( 48.8519, 58.5624 )
+z_index = -1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="button_left_color" type="TextureButton" parent="buttons_row_0/button_left"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 102.0
-margin_top = 1.0
-margin_right = 319.0
-margin_bottom = 139.0
+margin_left = -64.0
+margin_top = 2.0
+margin_right = 28.0
+margin_bottom = 113.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -133,22 +130,18 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 7 )
-_sections_unfolded = [ "Rect", "Textures" ]
+texture_click_mask = ExtResource( 8 )
+_sections_unfolded = [ "Textures", "texture_click_mask", "texture_focused" ]
 
-[node name="texture" type="Sprite" parent="buttons_row_0/button_right"]
-position = Vector2( 71.5986, 68.7347 )
-texture = ExtResource( 8 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="button_right_color" type="TextureButton" parent="buttons_row_0/button_right"]
+[node name="button_right" type="TextureButton" parent="buttons_row_0"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 104.0
-margin_top = 2.0
-margin_right = 215.0
-margin_bottom = 136.0
+margin_left = 299.0
+margin_top = -37.0
+margin_right = 413.0
+margin_bottom = 77.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -160,10 +153,193 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 9 )
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="texture" type="Sprite" parent="buttons_row_0/button_right"]
+position = Vector2( 71.5986, 68.7347 )
+z_index = -1
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="button_right_color" type="TextureButton" parent="buttons_row_0/button_right"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 86.0
+margin_top = 2.0
+margin_right = 178.0
+margin_bottom = 113.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
 _sections_unfolded = [ "Textures", "Visibility" ]
+
+[node name="buttons_row_1" type="Control" parent="."]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -150.0
+margin_right = 20.0
+margin_bottom = -110.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="texture_middle" type="Sprite" parent="buttons_row_1"]
+position = Vector2( 30.6684, -41.9785 )
+scale = Vector2( 0.724854, 0.724854 )
+z_index = 1
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="button_left" type="TextureButton" parent="buttons_row_1"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -362.0
+margin_top = -37.0
+margin_right = -248.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="texture" type="Sprite" parent="buttons_row_1/button_left"]
+position = Vector2( 42, 54 )
+scale = Vector2( 0.820044, 0.820044 )
+z_index = -1
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="button_left_color" type="TextureButton" parent="buttons_row_1/button_left"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -64.0
+margin_top = 2.0
+margin_right = 28.0
+margin_bottom = 113.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="button_right" type="TextureButton" parent="buttons_row_1"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 299.0
+margin_top = -37.0
+margin_right = 413.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="texture" type="Sprite" parent="buttons_row_1/button_right"]
+position = Vector2( 42, 54 )
+scale = Vector2( 0.82, 0.82 )
+z_index = -1
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="button_right_color" type="TextureButton" parent="buttons_row_1/button_right"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 86.0
+margin_top = 2.0
+margin_right = 178.0
+margin_bottom = 113.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
+_sections_unfolded = [ "Textures", "Visibility" ]
+
+[node name="frame_bg_1" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="frame" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="window_parts" type="Sprite" parent="."]
+position = Vector2( 5, 0 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="pressed" from="buttons_row_0/button_left" to="buttons_row_0" method="_on_button_left_pressed"]
 [connection signal="pressed" from="buttons_row_0/button_left/button_left_color" to="buttons_row_0" method="_on_button_left_color_pressed"]
 [connection signal="pressed" from="buttons_row_0/button_right" to="buttons_row_0" method="_on_button_right_pressed"]
 [connection signal="pressed" from="buttons_row_0/button_right/button_right_color" to="buttons_row_0" method="_on_button_right_color_pressed"]
+[connection signal="pressed" from="buttons_row_1/button_left" to="buttons_row_1" method="_on_button_left_pressed"]
+[connection signal="pressed" from="buttons_row_1/button_left/button_left_color" to="buttons_row_1" method="_on_button_left_color_pressed"]
+[connection signal="pressed" from="buttons_row_1/button_right" to="buttons_row_1" method="_on_button_right_pressed"]
+[connection signal="pressed" from="buttons_row_1/button_right/button_right_color" to="buttons_row_1" method="_on_button_right_color_pressed"]

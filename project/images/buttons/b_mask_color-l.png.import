@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/b_mask_color-l.png-cd1524f4fd045d64a80a1bd5df34d32e.res"
+
+[deps]
+
+source_file="res://images/buttons/b_mask_color-l.png"
+dest_files=[ "res://.import/b_mask_color-l.png-cd1524f4fd045d64a80a1bd5df34d32e.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5
