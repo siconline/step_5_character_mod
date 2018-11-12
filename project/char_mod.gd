@@ -56,6 +56,13 @@ var arr_texture_part_1 = \
 	[
 	preload('res://images/char_part_1/part_se.png'),
 	preload('res://images/char_part_1/part_01.png'),
+	preload('res://images/char_part_1/part_02.png'),
+	preload('res://images/char_part_1/part_03.png'),
+	preload('res://images/char_part_1/part_04.png'),
+	preload('res://images/char_part_1/part_05.png'),
+	preload('res://images/char_part_1/part_06.png'),
+	preload('res://images/char_part_1/part_07.png'),
+	preload('res://images/char_part_1/part_08.png'),
 	preload('res://images/char_part_1/part_se.png'),
 	]
 var texture_left_row_1 = arr_texture_part_1.size()/2 - 1 
