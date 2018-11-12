@@ -4,18 +4,22 @@
 [ext_resource path="res://images/background.jpg" type="Texture" id=2]
 [ext_resource path="res://images/frame_bg_2.jpg" type="Texture" id=3]
 [ext_resource path="res://buttons_rows.gd" type="Script" id=4]
-[ext_resource path="res://images/char_part_0/part_01.svg" type="Texture" id=5]
-[ext_resource path="res://images/buttons/b_part.png" type="Texture" id=6]
+[ext_resource path="res://images/buttons/b_part.png" type="Texture" id=5]
+[ext_resource path="res://images/char_part_0/part_01.png" type="Texture" id=6]
 [ext_resource path="res://images/buttons/b_color-l.png" type="Texture" id=7]
 [ext_resource path="res://images/buttons/b_mask_color-l.png" type="BitMap" id=8]
-[ext_resource path="res://images/char_part_0/part_04.svg" type="Texture" id=9]
+[ext_resource path="res://images/char_part_0/part_08.png" type="Texture" id=9]
 [ext_resource path="res://images/buttons/b_color-r.png" type="Texture" id=10]
 [ext_resource path="res://images/buttons/b_mask_color-r.png" type="BitMap" id=11]
-[ext_resource path="res://images/char_part_1/part_03.svg" type="Texture" id=12]
-[ext_resource path="res://images/char_part_1/part_01.svg" type="Texture" id=13]
-[ext_resource path="res://images/frame_bg_1.png" type="Texture" id=14]
-[ext_resource path="res://images/frame.png" type="Texture" id=15]
-[ext_resource path="res://images/window_parts.png" type="Texture" id=16]
+[ext_resource path="res://images/frame_bg_1.png" type="Texture" id=12]
+[ext_resource path="res://images/frame.png" type="Texture" id=13]
+[ext_resource path="res://images/window_parts.png" type="Texture" id=14]
+[ext_resource path="res://character/character.tscn" type="PackedScene" id=15]
+
+[sub_resource type="StreamTexture" id=1]
+
+flags = 4
+load_path = ""
 
 [node name="char_mod" type="Node2D"]
 script = ExtResource( 1 )
@@ -44,19 +48,27 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="background" type="Sprite" parent="."]
 z_index = -2
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="frame_bg_2" type="Sprite" parent="."]
 z_index = -1
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="buttons_row_0" type="Control" parent="."]
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -75,10 +87,6 @@ script = ExtResource( 4 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="texture_middle" type="Sprite" parent="buttons_row_0"]
-position = Vector2( 22.5973, 54.671 )
-z_index = 2
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Z Index" ]
 
 [node name="button_left" type="TextureButton" parent="buttons_row_0"]
 anchor_left = 0.0
@@ -100,13 +108,17 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Rect", "Textures" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="texture" type="Sprite" parent="buttons_row_0/button_left"]
-position = Vector2( 48.8519, 58.5624 )
+position = Vector2( 53, 107 )
+scale = Vector2( 0.4, 0.4 )
 z_index = -1
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="button_left_color" type="TextureButton" parent="buttons_row_0/button_left"]
@@ -153,11 +165,15 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Rect", "Textures" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="texture" type="Sprite" parent="buttons_row_0/button_right"]
-position = Vector2( 71.5986, 68.7347 )
+position = Vector2( 53, 107 )
+scale = Vector2( 0.4, 0.4 )
 z_index = -1
 texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -206,11 +222,7 @@ script = ExtResource( 4 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="texture_middle" type="Sprite" parent="buttons_row_1"]
-position = Vector2( 30.6684, -41.9785 )
-scale = Vector2( 0.724854, 0.724854 )
-z_index = 1
-texture = ExtResource( 12 )
-_sections_unfolded = [ "Z Index" ]
+position = Vector2( 0, -130 )
 
 [node name="button_left" type="TextureButton" parent="buttons_row_1"]
 anchor_left = 0.0
@@ -232,14 +244,14 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="texture" type="Sprite" parent="buttons_row_1/button_left"]
 position = Vector2( 42, 54 )
 scale = Vector2( 0.820044, 0.820044 )
 z_index = -1
-texture = ExtResource( 13 )
+texture = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="button_left_color" type="TextureButton" parent="buttons_row_1/button_left"]
@@ -286,14 +298,14 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="texture" type="Sprite" parent="buttons_row_1/button_right"]
 position = Vector2( 42, 54 )
 scale = Vector2( 0.82, 0.82 )
 z_index = -1
-texture = ExtResource( 13 )
+texture = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="button_right_color" type="TextureButton" parent="buttons_row_1/button_right"]
@@ -322,18 +334,32 @@ _sections_unfolded = [ "Textures", "Visibility" ]
 
 [node name="frame_bg_1" type="Sprite" parent="."]
 z_index = -1
-texture = ExtResource( 14 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="frame" type="Sprite" parent="."]
 z_index = -1
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="window_parts" type="Sprite" parent="."]
 position = Vector2( 5, 0 )
-texture = ExtResource( 16 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="character" parent="." instance=ExtResource( 15 )]
+position = Vector2( -18.0138, 5.25478 )
+z_index = 5
+_sections_unfolded = [ "Z Index" ]
 
 [connection signal="pressed" from="buttons_row_0/button_left" to="buttons_row_0" method="_on_button_left_pressed"]
 [connection signal="pressed" from="buttons_row_0/button_left/button_left_color" to="buttons_row_0" method="_on_button_left_color_pressed"]
